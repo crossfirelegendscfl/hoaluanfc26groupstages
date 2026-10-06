@@ -99,29 +99,31 @@ h1, h2, .reset-btn, .breadcrumb, .group-status-tag, .slot-rank,
   margin-bottom: 18px;
 }
 
-.hero-logo { display: block; }
+.hero-logo {
+  display: block;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
+}
 
 .hero-logo-cfl {
-  height: 34px;
+  height: 64px;
   width: auto;
-  mix-blend-mode: screen;
 }
 
 .hero-logo-htht {
-  height: 56px;
+  height: 84px;
   width: auto;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
 }
 
 .hero-logo-divider {
   width: 1px;
-  height: 36px;
+  height: 56px;
   background: linear-gradient(180deg, transparent, var(--gold-line), transparent);
 }
 
 @media (max-width: 640px) {
-  .hero-logo-cfl { height: 24px; }
-  .hero-logo-htht { height: 40px; }
+  .hero-logo-cfl { height: 38px; }
+  .hero-logo-htht { height: 50px; }
+  .hero-logo-divider { height: 36px; }
 }
 
 .breadcrumb {
