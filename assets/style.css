@@ -7,11 +7,8 @@
   --text-dim: #9a9aa2;
   --accent-gold: #d4af37;
   --green: #2fbf71;
-  --green-bg: #1d3b2a;
-  --orange: #c9922a;
-  --orange-bg: #3a2f17;
-  --red: #e5484d;
-  --red-bg: #3a1e1f;
+  --green-bg: #15261d;
+  --gray-bg: #1d1d21;
   --radius: 10px;
 }
 
@@ -55,24 +52,6 @@ body {
   letter-spacing: 0.2px;
 }
 
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.score-badge {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 10px 20px;
-  text-align: center;
-  min-width: 120px;
-}
-
-.score-value { font-size: 22px; font-weight: 800; }
-.score-label { font-size: 11px; color: var(--text-dim); letter-spacing: 0.5px; margin-top: 2px; }
-
 .reset-btn {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -83,60 +62,29 @@ body {
   font-size: 13px;
   cursor: pointer;
 }
-.reset-btn:hover { border-color: var(--red); color: var(--red); }
-
-/* ---------- Mode tabs ---------- */
-.mode-tabs {
-  display: flex;
-  gap: 8px;
-  padding: 16px 32px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.mode-tab {
-  background: none;
-  border: none;
-  color: var(--text-dim);
-  font-weight: 600;
-  font-size: 15px;
-  padding: 10px 6px 14px;
-  cursor: pointer;
-  border-bottom: 3px solid transparent;
-}
-
-.mode-tab.active {
-  color: var(--text);
-  border-bottom-color: var(--accent-gold);
-}
+.reset-btn:hover { border-color: var(--green); color: var(--green); }
 
 /* ---------- Main ---------- */
 main { padding: 24px 32px 40px; }
-
-.total-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.total-bar-label { font-size: 16px; font-weight: 700; }
-.total-bar-label strong { color: var(--accent-gold); font-size: 18px; }
-
-.legend { display: flex; gap: 18px; font-size: 13px; color: var(--text-dim); }
-.legend-item { display: flex; align-items: center; gap: 6px; }
-.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-.dot.correct { background: var(--green); }
-.dot.partial { background: var(--orange); }
-.dot.incorrect { background: var(--red); }
 
 .mode-hint {
   color: var(--text-dim);
   font-size: 13px;
   margin: 0 0 20px;
   max-width: 900px;
+  line-height: 1.6;
 }
+.mode-hint strong { color: var(--text); }
+
+.hint-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin: 0 2px -1px 0;
+}
+.hint-dot.advance { background: var(--green); }
+.hint-dot.eliminated { background: var(--text-dim); }
 
 /* ---------- Groups grid ---------- */
 .groups-grid {
@@ -184,13 +132,85 @@ main { padding: 24px 32px 40px; }
   color: var(--green);
   border-color: var(--green);
 }
-.group-status-tag.perfect {
-  background: linear-gradient(90deg, #3a2f17, #1d3b2a);
-  color: var(--accent-gold);
-  border-color: var(--accent-gold);
+
+/* ---------- Standings zone (fixed rank slots) ---------- */
+.standings-zone { margin-bottom: 18px; }
+
+.rank-zone {
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid;
 }
 
-.pool-section { margin-bottom: 14px; }
+.rank-zone.advance-zone {
+  background: rgba(47, 191, 113, 0.07);
+  border-color: rgba(47, 191, 113, 0.35);
+}
+
+.rank-zone.eliminated-zone {
+  background: rgba(154, 154, 162, 0.06);
+  border-color: var(--border);
+}
+
+.zone-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+  padding-left: 2px;
+}
+.zone-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.advance-zone .zone-label { color: var(--green); }
+.advance-zone .zone-dot { background: var(--green); }
+.eliminated-zone .zone-label { color: var(--text-dim); }
+.eliminated-zone .zone-dot { background: var(--text-dim); }
+
+.slot-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+.slot-row + .slot-row { margin-top: 8px; }
+
+.slot-rank {
+  width: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--text-dim);
+}
+.advance-zone .slot-rank { color: var(--green); }
+
+.slot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  min-height: 46px;
+  border-radius: 8px;
+}
+
+.slot-list:empty::after {
+  content: "Kéo đội vào đây";
+  color: var(--text-dim);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+/* ---------- Pool (unranked teams) ---------- */
+.pool-section { margin-top: 4px; }
 .section-label {
   font-size: 11px;
   color: var(--text-dim);
@@ -199,21 +219,16 @@ main { padding: 24px 32px 40px; }
   font-weight: 700;
 }
 
-.pool-list, .standings-list {
+.pool-list {
   list-style: none;
   margin: 0;
-  padding: 0;
-  min-height: 46px;
+  padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-.pool-list {
+  min-height: 56px;
   border: 1px dashed var(--border);
   border-radius: 10px;
-  padding: 8px;
-  min-height: 56px;
 }
 
 .pool-list:empty::after {
@@ -225,6 +240,7 @@ main { padding: 24px 32px 40px; }
   padding: 10px 0;
 }
 
+/* ---------- Team chip ---------- */
 .team-chip {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -235,20 +251,12 @@ main { padding: 24px 32px 40px; }
   gap: 10px;
   cursor: grab;
   user-select: none;
+  height: 46px;
 }
 .team-chip:active { cursor: grabbing; }
 
 .team-chip.sortable-ghost { opacity: 0.3; }
 .team-chip.sortable-drag { cursor: grabbing; }
-
-.rank-num {
-  font-weight: 800;
-  font-size: 15px;
-  color: var(--text-dim);
-  width: 16px;
-  text-align: center;
-  flex-shrink: 0;
-}
 
 .team-logo {
   width: 26px;
@@ -264,63 +272,6 @@ main { padding: 24px 32px 40px; }
 }
 
 .team-name { font-size: 14px; font-weight: 600; flex: 1; }
-
-.team-points {
-  font-size: 12px;
-  font-weight: 800;
-  padding: 4px 8px;
-  border-radius: 6px;
-  flex-shrink: 0;
-}
-
-.standings-list .team-chip { border-left: 3px solid var(--border); }
-
-.standings-list .team-chip.status-correct {
-  border-color: var(--green);
-  background: var(--green-bg);
-}
-.standings-list .team-chip.status-correct .team-points { background: var(--green); color: #0b0b0d; }
-
-.standings-list .team-chip.status-partial {
-  border-color: var(--orange);
-  background: var(--orange-bg);
-}
-.standings-list .team-chip.status-partial .team-points { background: var(--orange); color: #0b0b0d; }
-
-.standings-list .team-chip.status-incorrect {
-  border-color: var(--red);
-  background: var(--red-bg);
-}
-.standings-list .team-chip.status-incorrect .team-points { background: var(--red); color: #fff; }
-
-.standings-list li:nth-child(2) {
-  position: relative;
-  margin-bottom: 18px;
-}
-.standings-list li:nth-child(2)::after {
-  content: "▲ ĐI TIẾP ▲";
-  position: absolute;
-  bottom: -18px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--text-dim);
-  letter-spacing: 1px;
-}
-
-.standings-list { min-height: 56px; border-radius: 10px; }
-.standings-list:empty::after {
-  content: "Kéo đội vào đây";
-  color: var(--text-dim);
-  font-size: 12px;
-  display: block;
-  text-align: center;
-  padding: 14px 0;
-  border: 1px dashed var(--border);
-  border-radius: 10px;
-}
 
 /* ---------- Footer progress bar ---------- */
 .progress-footer {

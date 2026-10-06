@@ -1,6 +1,6 @@
 # Pick'Ems — Crossfire: Legends Championship
 
-Trang web dự đoán vòng bảng (pick'ems) cho giải Crossfire: Legends, lấy cảm hứng giao diện từ Pick'Ems Valorant Champions. Kéo thả đội vào bảng xếp hạng để dự đoán kết quả vòng bảng; điểm số tự động tính khi bạn nhập kết quả thực tế.
+Trang web dự đoán vòng bảng (pick'ems) cho giải Crossfire: Legends, lấy cảm hứng giao diện từ Pick'Ems Valorant Champions. Kéo đội từ danh sách "Chưa Xếp Hạng" lên 4 vị trí thứ hạng cố định (1–4) để dự đoán kết quả vòng bảng — vị trí 1–2 (khung xanh) là đội đi tiếp, vị trí 3–4 (khung xám) là đội bị loại.
 
 Trang web **tĩnh hoàn toàn** (HTML/CSS/JS thuần, không cần build step), dữ liệu lưu trong `localStorage` của trình duyệt — không cần tài khoản hay server.
 
@@ -8,11 +8,11 @@ Trang web **tĩnh hoàn toàn** (HTML/CSS/JS thuần, không cần build step), 
 
 - `index.html` — khung giao diện
 - `assets/style.css` — theme tối giống mẫu gốc
-- `assets/teams.js` — dữ liệu 4 bảng đấu (A–D), mỗi bảng 4 đội (**placeholder**, sửa lại khi có danh sách đội thật)
-- `assets/scoring.js` — luật tính điểm
-- `assets/app.js` — kéo thả (dùng [SortableJS](https://github.com/SortableJS/Sortable) qua CDN), lưu trạng thái, thanh tiến độ, chấm điểm
+- `assets/teams.js` — dữ liệu 4 bảng đấu (A–D), mỗi bảng 4 đội (**placeholder**, sửa lại khi có danh sách đội thật), cùng hằng số `ADVANCE_COUNT`
+- `assets/app.js` — kéo thả (dùng [SortableJS](https://github.com/SortableJS/Sortable) qua CDN) vào 4 ô thứ hạng cố định, lưu trạng thái, thanh tiến độ
+- `assets/scoring.js` — luật tính điểm (16đ đi tiếp + 2đ bonus đúng thứ hạng, tối đa 40đ/bảng). File này **chưa được gắn vào giao diện** (hiện tại trang chỉ tập trung vào việc thu thập dự đoán) — giữ lại làm tham khảo khi cần bật tính năng chấm điểm/nhập kết quả thực tế sau này.
 
-## Luật tính điểm
+## Luật tính điểm (tham khảo, sẽ dùng khi bật lại tính năng chấm điểm)
 
 Với mỗi bảng 4 đội, top 2 đi tiếp:
 
@@ -23,11 +23,7 @@ Với mỗi bảng 4 đội, top 2 đi tiếp:
 
 ## Cập nhật dữ liệu đội thật
 
-Mở [`assets/teams.js`](assets/teams.js) và thay tên đội (`name`), mã ngắn (`short`), màu logo placeholder (`color`) cho từng bảng. Nếu số bảng / số đội mỗi bảng / số đội đi tiếp khác với 4 bảng × 4 đội × top 2, chỉnh thêm hằng số `ADVANCE_COUNT` trong [`assets/scoring.js`](assets/scoring.js) và cấu trúc `GROUPS` tương ứng.
-
-## Nhập kết quả thực tế
-
-Sau khi vòng bảng kết thúc, chuyển sang tab **"Nhập Kết Quả Thực Tế"**, kéo thả các đội theo đúng thứ hạng thật. Ngay khi nhập đủ 4 đội của 1 bảng, điểm số cho dự đoán của bảng đó sẽ tự động hiển thị ở tab **"Dự Đoán Của Tôi"**.
+Mở [`assets/teams.js`](assets/teams.js) và thay tên đội (`name`), mã ngắn (`short`), màu logo placeholder (`color`) cho từng bảng. Nếu số bảng / số đội mỗi bảng / số đội đi tiếp khác với 4 bảng × 4 đội × top 2, chỉnh thêm hằng số `ADVANCE_COUNT` và cấu trúc `GROUPS` tương ứng (lưu ý `assets/app.js` hiện giả định mọi bảng có cùng số đội như bảng đầu tiên).
 
 ## Chạy thử local
 

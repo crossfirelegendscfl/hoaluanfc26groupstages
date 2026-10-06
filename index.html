@@ -19,31 +19,14 @@
       <h1 class="page-title">Lựa Chọn Của Tôi</h1>
     </div>
     <div class="topbar-right">
-      <div class="score-badge">
-        <div class="score-value" id="total-score">0 đ</div>
-        <div class="score-label">ĐIỂM SỐ</div>
-      </div>
       <button class="reset-btn" id="reset-btn" title="Xóa toàn bộ lựa chọn">Làm Lại</button>
     </div>
   </header>
 
-  <nav class="mode-tabs">
-    <button class="mode-tab active" data-mode="predict">Dự Đoán Của Tôi</button>
-    <button class="mode-tab" data-mode="actual">Nhập Kết Quả Thực Tế</button>
-  </nav>
-
   <main>
-    <div class="total-bar">
-      <span class="total-bar-label">TỔNG: <strong id="total-score-2">0</strong> / <span id="total-max">160</span> đ</span>
-      <div class="legend">
-        <span class="legend-item"><span class="dot correct"></span> Chọn đúng</span>
-        <span class="legend-item"><span class="dot partial"></span> Một Phần</span>
-        <span class="legend-item"><span class="dot incorrect"></span> Không Chính Xác</span>
-      </div>
-    </div>
-
-    <p class="mode-hint" id="mode-hint">
-      Kéo đội từ danh sách "Chưa Xếp Hạng" vào "Bảng Xếp Hạng" theo đúng thứ tự bạn dự đoán đội đó sẽ về đích (hạng 1 trên cùng).
+    <p class="mode-hint">
+      Kéo đội từ danh sách <strong>"Chưa Xếp Hạng"</strong> phía dưới lên các vị trí thứ hạng 1–4 phía trên để dự đoán kết quả vòng bảng.
+      Khung <span class="hint-dot advance"></span><strong>xanh (hạng 1–2)</strong> là đội đi tiếp, khung <span class="hint-dot eliminated"></span><strong>xám (hạng 3–4)</strong> là đội bị loại.
     </p>
 
     <div class="groups-grid" id="groups-grid">
@@ -63,7 +46,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
   <script src="assets/teams.js"></script>
-  <script src="assets/scoring.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>
