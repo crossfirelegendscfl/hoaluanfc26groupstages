@@ -15,6 +15,7 @@ $mime = @{
   ".html" = "text/html"; ".css" = "text/css"; ".js" = "application/javascript";
   ".json" = "application/json"; ".svg" = "image/svg+xml"; ".png" = "image/png";
   ".jpg" = "image/jpeg"; ".ico" = "image/x-icon";
+  ".otf" = "font/otf"; ".ttf" = "font/ttf"; ".woff" = "font/woff"; ".woff2" = "font/woff2";
 }
 
 try {
@@ -23,7 +24,7 @@ try {
     $request = $context.Request
     $response = $context.Response
     try {
-      $path = $request.Url.AbsolutePath
+      $path = [System.Uri]::UnescapeDataString($request.Url.AbsolutePath)
       if ($path -eq "/") { $path = "/index.html" }
       $filePath = Join-Path $Root ($path.TrimStart("/"))
 

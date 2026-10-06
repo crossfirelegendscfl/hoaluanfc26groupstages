@@ -86,7 +86,7 @@
     for (let i = 0; i < SLOTS; i++) {
       const row = `
         <div class="slot-row" data-rank="${i + 1}">
-          <span class="slot-rank">${i + 1}</span>
+          <span class="slot-rank"><span class="slot-rank-badge">${i + 1}</span></span>
           <ul class="slot-list" id="slot-${group.id}-${i}" data-group="${group.id}" data-index="${i}"></ul>
         </div>`;
       if (i < ADVANCE_COUNT) advanceRows.push(row);
