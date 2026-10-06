@@ -9,25 +9,16 @@ Trang web **tĩnh hoàn toàn** (HTML/CSS/JS thuần, không cần build step), 
 - `index.html` — khung giao diện (hero banner + lưới bảng đấu)
 - `assets/style.css` — theme lửa/vàng kim, font tùy chỉnh, toàn bộ style
 - `assets/fonts/` — font "GS3 Agency FB" (Regular/Bold) dùng cho tiêu đề, nút bấm, nhãn, tên đội
-- `assets/img/` — nơi đặt key visual (KV) của giải để làm nền hero banner (xem mục bên dưới)
+- `assets/img/` — key visual (`kv.jpg`, nén còn ~400KB từ bản gốc 4K) và logo giải (`logo-crossfire-legends.jpg`, `logo-hoa-tuyen-huyen-thoai.png`) hiển thị trên hero banner
 - `assets/teams.js` — dữ liệu 4 bảng đấu (A–D), mỗi bảng 4 đội (**placeholder**, sửa lại khi có danh sách đội thật), cùng hằng số `ADVANCE_COUNT`
 - `assets/app.js` — kéo thả (dùng [SortableJS](https://github.com/SortableJS/Sortable) qua CDN) vào 4 ô thứ hạng cố định, lưu trạng thái, thanh tiến độ
 - `assets/scoring.js` — luật tính điểm (16đ đi tiếp + 2đ bonus đúng thứ hạng, tối đa 40đ/bảng). File này **chưa được gắn vào giao diện** (hiện tại trang chỉ tập trung vào việc thu thập dự đoán) — giữ lại làm tham khảo khi cần bật tính năng chấm điểm/nhập kết quả thực tế sau này.
 
-## Thay key visual (KV) của giải
+## Thay key visual (KV) / logo của giải
 
-Hero banner ở đầu trang hiện dùng gradient lửa dựng bằng CSS (chưa có ảnh thật). Để lắp KV chính thức:
+Hero banner dùng `assets/img/kv.jpg` làm nền (xem rule `.hero-bg` trong [`assets/style.css`](assets/style.css)), phủ thêm gradient tối (`.hero-overlay`) để chữ luôn dễ đọc. Logo hiển thị ở góc trên hero là `.hero-logo-cfl` (logo CROSSFIRE LEGENDS, dùng bản nền đen + `mix-blend-mode: screen` để tự "ẩn" nền đen khi chồng lên ảnh) và `.hero-logo-htht` (logo "Hỏa Tuyến Huyền Thoại", PNG nền trong suốt).
 
-1. Copy file ảnh KV vào `assets/img/` (vd. `assets/img/kv.jpg`).
-2. Mở [`assets/style.css`](assets/style.css), tìm rule `.hero-bg`, bỏ comment và điền đường dẫn:
-   ```css
-   .hero-bg {
-     background-image: url("img/kv.jpg");
-     background-size: cover;
-     background-position: center 25%; /* chỉnh % theo bố cục ảnh */
-   }
-   ```
-3. Lớp `.hero-overlay` sẽ tự làm tối phần dưới ảnh để chữ tiêu đề luôn dễ đọc.
+Khi có KV/logo bản mới: thay trực tiếp file trong `assets/img/` (giữ nguyên tên) hoặc đổi đường dẫn trong `.hero-bg` / thẻ `<img>` tương ứng trong `index.html`. Nếu ảnh KV gốc rất nặng (file 4K thường vài chục MB), nên nén/resize xuống ~1920–2000px chiều ngang trước khi đưa vào repo để trang tải nhanh.
 
 ## Luật tính điểm (tham khảo, sẽ dùng khi bật lại tính năng chấm điểm)
 

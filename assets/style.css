@@ -58,7 +58,7 @@ h1, h2, .reset-btn, .breadcrumb, .group-status-tag, .slot-rank,
   position: relative;
   overflow: hidden;
   padding: 40px 32px 28px;
-  min-height: 200px;
+  min-height: 340px;
   display: flex;
   align-items: flex-end;
   border-bottom: 1px solid var(--border);
@@ -68,26 +68,60 @@ h1, h2, .reset-btn, .breadcrumb, .group-status-tag, .slot-rank,
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 90% at 50% -10%, rgba(255, 150, 60, 0.35), transparent 60%),
-    radial-gradient(ellipse 80% 60% at 80% 10%, rgba(240, 185, 77, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 90% at 50% -10%, rgba(255, 150, 60, 0.25), transparent 60%),
     linear-gradient(180deg, #1a1008 0%, #120d09 55%, var(--bg) 100%);
-  /* Swap in the tournament key visual here, e.g.:
-     background-image: url("img/kv.jpg");
-     background-size: cover;
-     background-position: center 25%;
-  */
+  background-image:
+    radial-gradient(ellipse 60% 90% at 50% -10%, rgba(255, 150, 60, 0.25), transparent 60%),
+    url("img/kv.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(10, 8, 7, 0.1) 0%, rgba(10, 8, 7, 0.55) 70%, var(--bg) 100%);
+  background:
+    linear-gradient(180deg, rgba(10, 8, 7, 0.25) 0%, rgba(10, 8, 7, 0.4) 45%, rgba(10, 8, 7, 0.88) 85%, var(--bg) 100%),
+    linear-gradient(90deg, rgba(10, 8, 7, 0.5) 0%, transparent 30%, transparent 70%, rgba(10, 8, 7, 0.5) 100%);
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
   width: 100%;
+}
+
+.hero-logos {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.hero-logo { display: block; }
+
+.hero-logo-cfl {
+  height: 34px;
+  width: auto;
+  mix-blend-mode: screen;
+}
+
+.hero-logo-htht {
+  height: 56px;
+  width: auto;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.55));
+}
+
+.hero-logo-divider {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(180deg, transparent, var(--gold-line), transparent);
+}
+
+@media (max-width: 640px) {
+  .hero-logo-cfl { height: 24px; }
+  .hero-logo-htht { height: 40px; }
 }
 
 .breadcrumb {
