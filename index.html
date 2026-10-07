@@ -34,10 +34,19 @@
   </header>
 
   <main>
-    <p class="mode-hint">
-      Kéo đội từ danh sách <strong>"Chưa Xếp Hạng"</strong> phía dưới lên các vị trí thứ hạng 1–4 phía trên để dự đoán kết quả vòng bảng.
-      Khung <span class="hint-dot advance"></span><strong>vàng (hạng 1–2)</strong> là đội đi tiếp, khung <span class="hint-dot eliminated"></span><strong>xám (hạng 3–4)</strong> là đội bị loại.
-    </p>
+    <div class="hint-row">
+      <p class="mode-hint">
+        Kéo đội từ danh sách <strong>"Chưa Xếp Hạng"</strong> phía dưới lên các vị trí thứ hạng 1–4 phía trên để dự đoán kết quả vòng bảng.
+        Khung <span class="hint-dot advance"></span><strong>vàng (hạng 1–2)</strong> là đội đi tiếp, khung <span class="hint-dot eliminated"></span><strong>xám (hạng 3–4)</strong> là đội bị loại.
+      </p>
+
+      <div class="scoring-note">
+        <div class="scoring-note-title">📊 Cách Tính Điểm</div>
+        <p class="scoring-note-line"><strong>+16đ</strong> mỗi đội dự đoán đúng đi tiếp</p>
+        <p class="scoring-note-line"><strong>+2đ</strong> bonus nếu xếp đúng thứ hạng</p>
+        <p class="scoring-note-max">Tối đa <strong>40đ</strong> / bảng</p>
+      </div>
+    </div>
 
     <div class="groups-grid" id="groups-grid">
       <!-- Group cards injected by app.js -->
