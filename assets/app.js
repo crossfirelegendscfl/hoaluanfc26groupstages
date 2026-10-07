@@ -226,6 +226,20 @@
     renderAll();
   });
 
+  // ---------- Rewards modal ----------
+  const rewardsBackdrop = document.getElementById("rewards-backdrop");
+  const openRewards = () => rewardsBackdrop.classList.remove("hidden");
+  const closeRewards = () => rewardsBackdrop.classList.add("hidden");
+
+  document.getElementById("rewards-btn").addEventListener("click", openRewards);
+  document.getElementById("rewards-close").addEventListener("click", closeRewards);
+  rewardsBackdrop.addEventListener("click", (e) => {
+    if (e.target === rewardsBackdrop) closeRewards();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeRewards();
+  });
+
   // ---------- Init ----------
   renderAll();
 })();

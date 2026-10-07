@@ -9,14 +9,14 @@ Trang web **tĩnh hoàn toàn** (HTML/CSS/JS thuần, không cần build step), 
 - `index.html` — khung giao diện (hero banner + lưới bảng đấu)
 - `assets/style.css` — theme lửa/vàng kim, font tùy chỉnh, toàn bộ style
 - `assets/fonts/` — font "GS3 Agency FB" (Regular/Bold) dùng cho tiêu đề, nút bấm, nhãn, tên đội
-- `assets/img/` — key visual (`kv.jpg`, nén còn ~400KB từ bản gốc 4K) và logo giải (`logo-crossfire-legends.jpg`, `logo-hoa-tuyen-huyen-thoai.png`) hiển thị trên hero banner
+- `assets/img/` — key visual (`kv.jpg`, nén còn ~400KB từ bản gốc 4K), logo giải (`logo-crossfire-legends.png`, `logo-hoa-tuyen-huyen-thoai.png`, đều nền trong suốt) hiển thị trên hero banner, và ảnh quà thưởng (`reward-jacket.png`, `reward-diamonds.png`) dùng trong popup "Xem Thưởng Giai Đoạn"
 - `assets/teams.js` — dữ liệu 4 bảng đấu (A–D), mỗi bảng 4 đội (**placeholder**, sửa lại khi có danh sách đội thật), cùng hằng số `ADVANCE_COUNT`
 - `assets/app.js` — kéo thả (dùng [SortableJS](https://github.com/SortableJS/Sortable) qua CDN) vào 4 ô thứ hạng cố định, lưu trạng thái, thanh tiến độ
 - `assets/scoring.js` — luật tính điểm (16đ đi tiếp + 2đ bonus đúng thứ hạng, tối đa 40đ/bảng). File này **chưa được gắn vào giao diện** (hiện tại trang chỉ tập trung vào việc thu thập dự đoán) — giữ lại làm tham khảo khi cần bật tính năng chấm điểm/nhập kết quả thực tế sau này.
 
 ## Thay key visual (KV) / logo của giải
 
-Hero banner dùng `assets/img/kv.jpg` làm nền (xem rule `.hero-bg` trong [`assets/style.css`](assets/style.css)), phủ thêm gradient tối (`.hero-overlay`) để chữ luôn dễ đọc. Logo hiển thị ở góc trên hero là `.hero-logo-cfl` (logo CROSSFIRE LEGENDS, dùng bản nền đen + `mix-blend-mode: screen` để tự "ẩn" nền đen khi chồng lên ảnh) và `.hero-logo-htht` (logo "Hỏa Tuyến Huyền Thoại", PNG nền trong suốt).
+Hero banner dùng `assets/img/kv.jpg` làm nền (xem rule `.hero-bg` trong [`assets/style.css`](assets/style.css)), phủ thêm gradient tối (`.hero-overlay`) để chữ luôn dễ đọc. Logo hiển thị ở góc trên hero là `.hero-logo-cfl` (logo CROSSFIRE LEGENDS) và `.hero-logo-htht` (logo "Hỏa Tuyến Huyền Thoại") — cả hai đều là PNG nền trong suốt.
 
 Khi có KV/logo bản mới: thay trực tiếp file trong `assets/img/` (giữ nguyên tên) hoặc đổi đường dẫn trong `.hero-bg` / thẻ `<img>` tương ứng trong `index.html`. Nếu ảnh KV gốc rất nặng (file 4K thường vài chục MB), nên nén/resize xuống ~1920–2000px chiều ngang trước khi đưa vào repo để trang tải nhanh.
 
@@ -28,6 +28,10 @@ Với mỗi bảng 4 đội, top 2 đi tiếp:
 - Dự đoán đúng đội **không** đi tiếp: **+0 điểm** (không có điểm cho việc đoán đúng đội bị loại).
 - Xếp đúng chính xác thứ hạng (vị trí 1–4) của đội: **+2 điểm bonus**, áp dụng cho mọi vị trí kể cả đội không đi tiếp.
 - Tổng tối đa 1 bảng: `2 × 16 + 4 × 2 = 40 điểm`. Tổng tối đa toàn giải (4 bảng): `160 điểm`.
+
+## Quà thưởng giai đoạn
+
+Nút **"Xem Thưởng Giai Đoạn"** cạnh tiêu đề mở popup liệt kê quà thưởng theo 4 mức (TOP 1, TOP 2, TOP 3–5, TOP 6–10). Nội dung quà và ảnh nằm trực tiếp trong `index.html` (khối `#rewards-backdrop`) — sửa text hoặc thay ảnh trong `assets/img/` khi cần cập nhật mức thưởng.
 
 ## Cập nhật dữ liệu đội thật
 

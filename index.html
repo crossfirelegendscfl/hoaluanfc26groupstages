@@ -24,7 +24,10 @@
         <span>Hỏa Luận — Crossfire: Legends Fall Championship 2026</span>
       </div>
       <div class="hero-bottom-row">
-        <h1 class="page-title">Lựa Chọn Của Tôi</h1>
+        <div class="hero-title-group">
+          <h1 class="page-title">Lựa Chọn Của Tôi</h1>
+          <button class="rewards-btn" id="rewards-btn">🏆 Xem Thưởng Giai Đoạn</button>
+        </div>
         <button class="reset-btn" id="reset-btn" title="Xóa toàn bộ lựa chọn">Làm Lại</button>
       </div>
     </div>
@@ -50,6 +53,41 @@
       <span class="progress-pct" id="progress-pct">0%</span>
     </div>
   </footer>
+
+  <div class="modal-backdrop hidden" id="rewards-backdrop">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="rewards-title">
+      <button class="modal-close" id="rewards-close" aria-label="Đóng">&times;</button>
+      <h2 class="modal-title" id="rewards-title">Quà Thưởng Giai Đoạn</h2>
+      <p class="modal-intro">
+        Quà thưởng toàn giai đoạn Vòng Bảng–Playoffs – sự kiện <strong>Hỏa Luận Crossfire: Legends Fall Championship 2026</strong> như sau:
+      </p>
+
+      <div class="reward-grid">
+        <div class="reward-card tier-1">
+          <span class="reward-tier">TOP 1</span>
+          <img class="reward-image" src="assets/img/reward-jacket.png" alt="Áo khoác EVOLUTION độc quyền" />
+          <p class="reward-text">Thẻ Zing <strong>1.000.000đ</strong><br />+ 1 Áo Khoác <strong>EVOLUTION</strong> Độc Quyền</p>
+        </div>
+        <div class="reward-card tier-2">
+          <span class="reward-tier">TOP 2</span>
+          <img class="reward-image" src="assets/img/reward-jacket.png" alt="Áo khoác EVOLUTION độc quyền" />
+          <p class="reward-text">Thẻ Zing <strong>500.000đ</strong><br />+ 1 Áo Khoác <strong>EVOLUTION</strong> Độc Quyền</p>
+        </div>
+        <div class="reward-card tier-3">
+          <span class="reward-tier">TOP 3 – 5</span>
+          <img class="reward-image" src="assets/img/reward-jacket.png" alt="Áo khoác EVOLUTION độc quyền" />
+          <p class="reward-text">1 Áo Khoác <strong>EVOLUTION</strong> Độc Quyền</p>
+        </div>
+        <div class="reward-card tier-4">
+          <span class="reward-tier">TOP 6 – 10</span>
+          <img class="reward-image reward-image-diamonds" src="assets/img/reward-diamonds.png" alt="Giftcode 3000 Kim Cương" />
+          <p class="reward-text">1 Giftcode <strong>3.000 Kim Cương</strong></p>
+        </div>
+      </div>
+
+      <p class="modal-footnote">* Xếp hạng theo % dự đoán đúng cao nhất toàn giai đoạn Vòng Bảng–Playoffs.</p>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
   <script src="assets/teams.js"></script>
