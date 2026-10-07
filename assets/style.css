@@ -48,8 +48,8 @@ body {
   padding-bottom: 96px;
 }
 
-h1, h2, .reset-btn, .breadcrumb, .group-status-tag, .slot-rank,
-.section-label, .zone-label, .progress-text, .team-name {
+h1, h2, .reset-btn, .rewards-btn, .breadcrumb, .group-status-tag, .slot-rank,
+.section-label, .zone-label, .progress-text, .team-name, .reward-tier, .reward-item {
   font-family: "Agency", "Inter", system-ui, sans-serif;
 }
 
@@ -551,7 +551,7 @@ main { padding: 28px 32px 40px; }
 .modal-box {
   position: relative;
   width: 100%;
-  max-width: 920px;
+  max-width: 980px;
   max-height: 88vh;
   overflow-y: auto;
   background: linear-gradient(180deg, var(--bg-card-top) 0%, var(--bg-card) 220px);
@@ -597,32 +597,52 @@ main { padding: 28px 32px 40px; }
 }
 .modal-intro strong { color: var(--gold-bright); }
 
+.modal-rule {
+  margin: 14px 0 0;
+  padding: 14px 16px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-line);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.modal-rule strong { color: var(--gold-bright); }
+
 .reward-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 22px;
 }
 
-@media (max-width: 860px) {
-  .reward-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) {
+  .reward-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .reward-grid { grid-template-columns: 1fr; }
   .modal-box { padding: 22px; }
   .modal-title { font-size: 24px; }
+  .reward-card { flex-direction: column; text-align: center; }
 }
 
 .reward-card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 18px 14px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 16px;
+}
+
+.reward-visual {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .reward-tier {
@@ -659,21 +679,29 @@ main { padding: 28px 32px 40px; }
 }
 
 .reward-image {
-  height: 130px;
+  height: 110px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
 }
-.reward-image-diamonds { height: 100px; }
+.reward-image-diamonds { height: 86px; }
 
-.reward-text {
-  margin: 0;
+.reward-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.reward-item {
   font-size: 14px;
-  line-height: 1.6;
+  font-weight: 600;
+  line-height: 1.4;
   color: var(--text-dim);
 }
-.reward-text strong { color: var(--text); font-weight: 700; }
+.reward-item strong { color: var(--text); font-weight: 700; }
 
 .modal-footnote {
   margin: 20px 0 0;
