@@ -1,4 +1,4 @@
-# Pick'Ems — Crossfire: Legends Fall Championship 2026
+# Hỏa Luận — Crossfire: Legends Fall Championship 2026
 
 Trang web dự đoán vòng bảng (pick'ems) cho giải Crossfire: Legends Fall Championship 2026, lấy cảm hứng giao diện từ Pick'Ems Valorant Champions, phối theo tông lửa/vàng kim của key visual giải đấu. Kéo đội từ danh sách "Chưa Xếp Hạng" lên 4 vị trí thứ hạng cố định (1–4) để dự đoán kết quả vòng bảng — vị trí 1–2 (khung vàng) là đội đi tiếp, vị trí 3–4 (khung xám tro) là đội bị loại.
 
