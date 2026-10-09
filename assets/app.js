@@ -71,7 +71,8 @@
     const li = document.createElement("li");
     li.className = "team-chip";
     li.dataset.teamId = team.id;
-    li.innerHTML = `<span class="team-logo"><img src="${team.logo}" alt="${team.name}" loading="lazy" /></span><span class="team-name">${team.name}</span>`;
+    const logoClass = team.lightBg ? "team-logo light-bg" : "team-logo";
+    li.innerHTML = `<span class="${logoClass}"><img src="${team.logo}" alt="${team.name}" loading="lazy" /></span><span class="team-name">${team.name}</span>`;
     return li;
   }
 

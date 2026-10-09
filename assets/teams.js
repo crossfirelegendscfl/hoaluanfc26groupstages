@@ -11,7 +11,7 @@ const GROUPS = [
       { id: "A1", name: "Variation", short: "VAR", logo: "assets/img/teams/VAR.png" },
       { id: "A2", name: "6677", short: "6677", logo: "assets/img/teams/6677.png" },
       { id: "A3", name: "Hạt Giống Gaming", short: "HGM", logo: "assets/img/teams/HGM.png" },
-      { id: "A4", name: "Circus United", short: "CCU", logo: "assets/img/teams/CCU.png" },
+      { id: "A4", name: "Circus United", short: "CCU", logo: "assets/img/teams/CCU.png", lightBg: true },
     ],
   },
   {
@@ -31,7 +31,7 @@ const GROUPS = [
       { id: "C1", name: "Evolution", short: "EVO", logo: "assets/img/teams/EVO.png" },
       { id: "C2", name: "Golden Stars", short: "GS", logo: "assets/img/teams/GS.png" },
       { id: "C3", name: "Just A Vibe", short: "JAV", logo: "assets/img/teams/JAV.png" },
-      { id: "C4", name: "Gen Over", short: "GO", logo: "assets/img/teams/GO.png" },
+      { id: "C4", name: "Gen Over", short: "GO", logo: "assets/img/teams/GO.png", lightBg: true },
     ],
   },
   {
