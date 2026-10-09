@@ -236,8 +236,70 @@
   rewardsBackdrop.addEventListener("click", (e) => {
     if (e.target === rewardsBackdrop) closeRewards();
   });
+
+  // ---------- Share results modal ----------
+  const shareBackdrop = document.getElementById("share-backdrop");
+  const shareGroupsEl = document.getElementById("share-groups");
+
+  function buildShareCard() {
+    shareGroupsEl.innerHTML = "";
+    GROUPS.forEach((group) => {
+      const picks = state.picks[group.id];
+      const box = document.createElement("div");
+      box.className = "share-group";
+      const rowsHtml = picks
+        .map((teamId, idx) => {
+          const status = idx < ADVANCE_COUNT ? "advance" : "eliminated";
+          if (!teamId) {
+            return `<div class="share-team-row ${status} empty"><span class="share-rank">${idx + 1}</span><span class="share-team-name">Chưa chọn</span></div>`;
+          }
+          const team = teamById(group.id, teamId);
+          return `<div class="share-team-row ${status}"><span class="share-rank">${idx + 1}</span><img class="share-team-logo" src="${team.logo}" alt="" /><span class="share-team-name">${team.name}</span></div>`;
+        })
+        .join("");
+      box.innerHTML = `<div class="share-group-title">${group.name}</div>${rowsHtml}`;
+      shareGroupsEl.appendChild(box);
+    });
+  }
+
+  const openShare = () => {
+    buildShareCard();
+    shareBackdrop.classList.remove("hidden");
+  };
+  const closeShare = () => shareBackdrop.classList.add("hidden");
+
+  document.getElementById("share-btn").addEventListener("click", openShare);
+  document.getElementById("share-close").addEventListener("click", closeShare);
+  shareBackdrop.addEventListener("click", (e) => {
+    if (e.target === shareBackdrop) closeShare();
+  });
+
+  document.getElementById("download-share-btn").addEventListener("click", () => {
+    const btn = document.getElementById("download-share-btn");
+    const card = document.getElementById("share-card");
+    btn.disabled = true;
+    btn.textContent = "Đang xử lý…";
+    html2canvas(card, { backgroundColor: null, scale: 2 })
+      .then((canvas) => {
+        const link = document.createElement("a");
+        link.download = "hoa-luan-du-doan-vong-bang.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+      })
+      .catch(() => {
+        alert("Có lỗi khi tạo ảnh, vui lòng thử lại.");
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = "⬇️ Tải Ảnh Về";
+      });
+  });
+
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeRewards();
+    if (e.key === "Escape") {
+      closeRewards();
+      closeShare();
+    }
   });
 
   // ---------- Init ----------

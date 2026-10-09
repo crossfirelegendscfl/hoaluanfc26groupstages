@@ -27,6 +27,7 @@
         <div class="hero-title-group">
           <h1 class="page-title">Lựa Chọn Của Tôi</h1>
           <button class="rewards-btn" id="rewards-btn">🏆 Xem Thưởng Giai Đoạn</button>
+          <button class="share-btn" id="share-btn">📤 Chia Sẻ Kết Quả</button>
         </div>
         <button class="reset-btn" id="reset-btn" title="Xóa toàn bộ lựa chọn">Làm Lại</button>
       </div>
@@ -128,6 +129,33 @@
     </div>
   </div>
 
+  <div class="modal-backdrop hidden" id="share-backdrop">
+    <div class="modal-box share-modal-box" role="dialog" aria-modal="true" aria-labelledby="share-title">
+      <button class="modal-close" id="share-close" aria-label="Đóng">&times;</button>
+      <h2 class="modal-title" id="share-title">Chia Sẻ Kết Quả</h2>
+      <p class="modal-intro">Ảnh tổng hợp đầy đủ 4 bảng — tải về để chia sẻ, không lo chụp màn hình bị thiếu.</p>
+
+      <div class="share-card-scroll">
+        <div class="share-card" id="share-card">
+          <div class="share-card-header">
+            <img class="share-card-logo" src="assets/img/logo-crossfire-legends.png" alt="Crossfire Legends" />
+            <div class="share-card-heading">
+              <div class="share-card-title">Lựa Chọn Của Tôi</div>
+              <div class="share-card-subtitle">Hỏa Luận — Crossfire: Legends Fall Championship 2026</div>
+            </div>
+          </div>
+          <div class="share-groups" id="share-groups">
+            <!-- Filled in by app.js -->
+          </div>
+          <div class="share-card-footer">hoaluanfc26groupstages.github.io</div>
+        </div>
+      </div>
+
+      <button class="download-btn" id="download-share-btn">⬇️ Tải Ảnh Về</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
   <script src="assets/teams.js"></script>
   <script src="assets/app.js"></script>
