@@ -7,7 +7,7 @@
 }
 @font-face {
   font-family: "Agency";
-  src: url("fonts/GS3 Agency FB Bold.otf") format("opentype");
+  src: url("fonts/GS3 Agency FB Black.otf") format("opentype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -130,7 +130,7 @@ h1, h2, .reset-btn, .rewards-btn, .breadcrumb, .group-status-tag, .slot-rank,
 .breadcrumb {
   color: var(--gold);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 21px;
   letter-spacing: 0.3px;
   display: flex;
   align-items: center;
@@ -182,7 +182,7 @@ h1, h2, .reset-btn, .rewards-btn, .breadcrumb, .group-status-tag, .slot-rank,
 
 .page-title {
   margin: 0;
-  font-size: 56px;
+  font-size: 66px;
   font-weight: 700;
   letter-spacing: 0.3px;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
@@ -267,23 +267,23 @@ main { padding: 28px 32px 40px; }
   position: relative;
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-size: 12px;
+  gap: 8px;
+  font-size: 17px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.1px;
   color: var(--gold-bright);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 .scoring-note-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
   background: linear-gradient(180deg, var(--gold-bright), var(--gold));
-  font-size: 11px;
+  font-size: 13px;
   filter: drop-shadow(0 0 6px rgba(240, 185, 77, 0.6));
 }
 
@@ -308,19 +308,19 @@ main { padding: 28px 32px 40px; }
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 42px;
-  height: 28px;
-  padding: 0 6px;
+  min-width: 50px;
+  height: 34px;
+  padding: 0 8px;
   border-radius: 999px;
   font-family: "Agency", "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 700;
   color: #241a06;
   background: linear-gradient(180deg, var(--gold-bright), var(--gold));
   box-shadow: 0 0 10px rgba(240, 185, 77, 0.4);
 }
 .scoring-desc {
-  font-size: 12.5px;
+  font-size: 15.5px;
   font-weight: 500;
   line-height: 1.4;
   color: var(--text-dim);
@@ -334,13 +334,13 @@ main { padding: 28px 32px 40px; }
   justify-content: space-between;
   padding-top: 11px;
   border-top: 1px dashed rgba(240, 185, 77, 0.28);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-dim);
 }
 .scoring-note-max strong {
   font-family: "Agency", "Inter", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   color: #241a06;
   background: linear-gradient(90deg, var(--gold), var(--gold-bright));
@@ -365,7 +365,7 @@ main { padding: 28px 32px 40px; }
 @media (max-width: 640px) {
   .groups-grid { grid-template-columns: 1fr; }
   .hero, main { padding-left: 18px; padding-right: 18px; }
-  .page-title { font-size: 38px; }
+  .page-title { font-size: 46px; }
   .scoring-note { justify-self: stretch; max-width: none; text-align: left; }
 }
 
@@ -400,7 +400,7 @@ main { padding: 28px 32px 40px; }
 }
 
 .group-card-header h2 {
-  font-size: 25px;
+  font-size: 29px;
   margin: 0;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -408,7 +408,7 @@ main { padding: 28px 32px 40px; }
 }
 
 .group-status-tag {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.4px;
   padding: 6px 14px;
@@ -447,7 +447,7 @@ main { padding: 28px 32px 40px; }
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 9px;
@@ -521,7 +521,7 @@ main { padding: 28px 32px 40px; }
 /* ---------- Pool (unranked teams) ---------- */
 .pool-section { margin-top: 4px; }
 .section-label {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-dim);
   letter-spacing: 1px;
   margin-bottom: 9px;
@@ -719,7 +719,7 @@ main { padding: 28px 32px 40px; }
 
 .modal-title {
   margin: 0 36px 14px 0;
-  font-size: 30px;
+  font-size: 34px;
   font-weight: 700;
   color: var(--gold-bright);
   letter-spacing: 0.3px;
