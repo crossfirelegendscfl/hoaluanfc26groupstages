@@ -10,7 +10,8 @@ Trang web **tĩnh hoàn toàn** (HTML/CSS/JS thuần, không cần build step), 
 - `assets/style.css` — theme lửa/vàng kim, font tùy chỉnh, toàn bộ style
 - `assets/fonts/` — font "GS3 Agency FB" (Regular/Bold) dùng cho tiêu đề, nút bấm, nhãn, tên đội
 - `assets/img/` — key visual (`kv.jpg`, nén còn ~400KB từ bản gốc 4K), logo giải (`logo-crossfire-legends.png`, `logo-hoa-tuyen-huyen-thoai.png`, đều nền trong suốt) hiển thị trên hero banner, và ảnh quà thưởng (`reward-jacket.png`, `reward-diamonds.png`) dùng trong popup "Xem Thưởng Giai Đoạn"
-- `assets/teams.js` — dữ liệu 4 bảng đấu (A–D), mỗi bảng 4 đội (**placeholder**, sửa lại khi có danh sách đội thật), cùng hằng số `ADVANCE_COUNT`
+- `assets/teams.js` — dữ liệu thật 4 bảng đấu (A–D), mỗi bảng 4 đội (tên, mã ngắn, đường dẫn logo), cùng hằng số `ADVANCE_COUNT`
+- `assets/img/teams/` — logo 16 đội, đã tách nền trong suốt (PNG)
 - `assets/app.js` — kéo thả (dùng [SortableJS](https://github.com/SortableJS/Sortable) qua CDN) vào 4 ô thứ hạng cố định, lưu trạng thái, thanh tiến độ
 - `assets/scoring.js` — luật tính điểm (16đ đi tiếp + 2đ bonus đúng thứ hạng, tối đa 40đ/bảng). File này **chưa được gắn vào giao diện** (hiện tại trang chỉ tập trung vào việc thu thập dự đoán) — giữ lại làm tham khảo khi cần bật tính năng chấm điểm/nhập kết quả thực tế sau này.
 
@@ -33,9 +34,11 @@ Với mỗi bảng 4 đội, top 2 đi tiếp:
 
 Nút **"Xem Thưởng Giai Đoạn"** cạnh tiêu đề mở popup liệt kê quà thưởng theo 4 mức (TOP 1, TOP 2, TOP 3–5, TOP 6–10). Nội dung quà và ảnh nằm trực tiếp trong `index.html` (khối `#rewards-backdrop`) — sửa text hoặc thay ảnh trong `assets/img/` khi cần cập nhật mức thưởng.
 
-## Cập nhật dữ liệu đội thật
+## Cập nhật dữ liệu đội
 
-Mở [`assets/teams.js`](assets/teams.js) và thay tên đội (`name`), mã ngắn (`short`), màu logo placeholder (`color`) cho từng bảng. Nếu số bảng / số đội mỗi bảng / số đội đi tiếp khác với 4 bảng × 4 đội × top 2, chỉnh thêm hằng số `ADVANCE_COUNT` và cấu trúc `GROUPS` tương ứng (lưu ý `assets/app.js` hiện giả định mọi bảng có cùng số đội như bảng đầu tiên).
+Mở [`assets/teams.js`](assets/teams.js), mỗi đội có `name`, `short` (mã viết tắt) và `logo` (đường dẫn ảnh trong `assets/img/teams/`). Nếu số bảng / số đội mỗi bảng / số đội đi tiếp khác với 4 bảng × 4 đội × top 2, chỉnh thêm hằng số `ADVANCE_COUNT` và cấu trúc `GROUPS` tương ứng (lưu ý `assets/app.js` hiện giả định mọi bảng có cùng số đội như bảng đầu tiên).
+
+Logo đội hiển thị dạng tròn (`.team-logo`, `object-fit: contain` trên nền tối) nên chấp nhận logo vuông/dọc bất kỳ mà không bị crop mất chi tiết. Khi thay logo mới, nếu ảnh có nền trắng/đen/xám phẳng, nên tách nền trong suốt trước khi đưa vào `assets/img/teams/` để tránh viền hình chữ nhật quanh logo.
 
 ## Chạy thử local
 

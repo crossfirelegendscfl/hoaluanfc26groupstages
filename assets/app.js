@@ -71,8 +71,7 @@
     const li = document.createElement("li");
     li.className = "team-chip";
     li.dataset.teamId = team.id;
-    const initials = (team.short || team.name.slice(0, 3)).slice(0, 3).toUpperCase();
-    li.innerHTML = `<span class="team-logo" style="background:${team.color}">${initials}</span><span class="team-name">${team.name}</span>`;
+    li.innerHTML = `<span class="team-logo"><img src="${team.logo}" alt="${team.name}" loading="lazy" /></span><span class="team-name">${team.name}</span>`;
     return li;
   }
 

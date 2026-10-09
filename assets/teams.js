@@ -1,5 +1,5 @@
-// Dữ liệu đội thi đấu (placeholder) — thay bằng dữ liệu thật khi có.
-// Mỗi bảng có đúng 4 đội, top ADVANCE_COUNT đội đi tiếp vào playoff.
+// Dữ liệu đội thi đấu — Hỏa Luận Crossfire: Legends Fall Championship 2026.
+// Mỗi bảng có đúng 4 đội, top ADVANCE_COUNT đội đi tiếp vào Playoffs.
 
 const ADVANCE_COUNT = 2;
 
@@ -8,40 +8,40 @@ const GROUPS = [
     id: "A",
     name: "Bảng A",
     teams: [
-      { id: "A1", name: "Phoenix Rising", short: "PNX", color: "#e63946" },
-      { id: "A2", name: "Iron Wolves", short: "IRW", color: "#457b9d" },
-      { id: "A3", name: "Crimson Tide", short: "CRT", color: "#e76f51" },
-      { id: "A4", name: "Silent Storm", short: "SST", color: "#2a9d8f" },
+      { id: "A1", name: "Variation", short: "VAR", logo: "assets/img/teams/VAR.png" },
+      { id: "A2", name: "6677", short: "6677", logo: "assets/img/teams/6677.png" },
+      { id: "A3", name: "Hạt Giống Gaming", short: "HGM", logo: "assets/img/teams/HGM.png" },
+      { id: "A4", name: "Circus United", short: "CCU", logo: "assets/img/teams/CCU.png" },
     ],
   },
   {
     id: "B",
     name: "Bảng B",
     teams: [
-      { id: "B1", name: "Golden Hawks", short: "GHK", color: "#f4a261" },
-      { id: "B2", name: "Shadow Reapers", short: "SRP", color: "#6d597a" },
-      { id: "B3", name: "Thunder Legion", short: "THL", color: "#277da1" },
-      { id: "B4", name: "Viper Squad", short: "VPR", color: "#588157" },
+      { id: "B1", name: "VN Glory", short: "VG", logo: "assets/img/teams/VG.png" },
+      { id: "B2", name: "Gà Esport", short: "GE", logo: "assets/img/teams/GE.png" },
+      { id: "B3", name: "No Fear", short: "NF", logo: "assets/img/teams/NF.png" },
+      { id: "B4", name: "God Empire", short: "GOD", logo: "assets/img/teams/GOD.png" },
     ],
   },
   {
     id: "C",
     name: "Bảng C",
     teams: [
-      { id: "C1", name: "Frost Guardians", short: "FGD", color: "#4cc9f0" },
-      { id: "C2", name: "Blaze Runners", short: "BLZ", color: "#f94144" },
-      { id: "C3", name: "Steel Dragons", short: "STD", color: "#8338ec" },
-      { id: "C4", name: "Night Hunters", short: "NHT", color: "#43aa8b" },
+      { id: "C1", name: "Evolution", short: "EVO", logo: "assets/img/teams/EVO.png" },
+      { id: "C2", name: "Golden Stars", short: "GS", logo: "assets/img/teams/GS.png" },
+      { id: "C3", name: "Just A Vibe", short: "JAV", logo: "assets/img/teams/JAV.png" },
+      { id: "C4", name: "Gen Over", short: "GO", logo: "assets/img/teams/GO.png" },
     ],
   },
   {
     id: "D",
     name: "Bảng D",
     teams: [
-      { id: "D1", name: "Royal Falcons", short: "RFC", color: "#f3722c" },
-      { id: "D2", name: "Dark Serpents", short: "DSP", color: "#577590" },
-      { id: "D3", name: "Blitz Troopers", short: "BZT", color: "#90be6d" },
-      { id: "D4", name: "Omega Knights", short: "OMK", color: "#f9c74f" },
+      { id: "D1", name: "NoName", short: "NN", logo: "assets/img/teams/NN.png" },
+      { id: "D2", name: "Legend Warrior", short: "LW", logo: "assets/img/teams/LW.png" },
+      { id: "D3", name: "Rapid LoFi", short: "RLF", logo: "assets/img/teams/RLF.png" },
+      { id: "D4", name: "Royal Legends", short: "RL", logo: "assets/img/teams/RL.png" },
     ],
   },
 ];
