@@ -11,7 +11,7 @@ const GROUPS = [
       { id: "A1", name: "Variation", short: "VAR", logo: "assets/img/teams/VAR.png" },
       { id: "A2", name: "6677", short: "6677", logo: "assets/img/teams/6677.png" },
       { id: "A3", name: "Hạt Giống Gaming", short: "HGM", logo: "assets/img/teams/HGM.png" },
-      { id: "A4", name: "Circus United", short: "CCU", logo: "assets/img/teams/CCU.png", lightBg: true },
+      { id: "A4", name: "Circus United", short: "CCU", logo: "assets/img/teams/CCU.png" },
     ],
   },
   {
