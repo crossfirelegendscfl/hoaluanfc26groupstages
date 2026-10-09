@@ -185,11 +185,15 @@ h1, h2, .reset-btn, .rewards-btn, .breadcrumb, .group-status-tag, .slot-rank,
   font-size: 66px;
   font-weight: 700;
   letter-spacing: 0.3px;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(180deg, #ffffff 0%, #f3ead9 60%, var(--gold) 140%);
+  background: linear-gradient(180deg, #fff3d4 0%, #ffd873 32%, #f0ab3d 62%, #c9761e 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  -webkit-text-stroke: 1.5px rgba(43, 22, 5, 0.85);
+  filter:
+    drop-shadow(0 0 10px rgba(255, 140, 50, 0.65))
+    drop-shadow(0 0 26px rgba(255, 90, 20, 0.4))
+    drop-shadow(0 6px 14px rgba(0, 0, 0, 0.65));
 }
 
 .reset-btn {
