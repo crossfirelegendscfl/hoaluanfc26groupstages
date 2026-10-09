@@ -396,6 +396,7 @@ main { padding: 28px 32px 40px; }
   .hero, main { padding-left: 18px; padding-right: 18px; }
   .page-title { font-size: 46px; }
   .scoring-note { justify-self: stretch; max-width: none; text-align: left; }
+  body { padding-bottom: 150px; }
 }
 
 .group-card {
@@ -661,9 +662,34 @@ main { padding: 28px 32px 40px; }
 .progress-footer-inner {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.footer-share-btn {
+  padding: 9px 18px;
+  font-size: 13px;
+  flex-shrink: 0;
+  order: 10;
+}
+.footer-share-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--border);
+  color: var(--text-dim);
+  transform: none;
+  box-shadow: none;
+}
+.footer-share-btn:disabled:hover { transform: none; border-color: var(--border); }
+
+@media (max-width: 640px) {
+  .progress-footer-inner { gap: 10px 14px; }
+  .progress-text { flex-basis: 100%; order: 1; }
+  .progress-track { order: 2; }
+  .progress-pct { order: 3; }
+  .footer-share-btn { order: 4; flex-basis: 100%; text-align: center; }
 }
 
 .progress-text {

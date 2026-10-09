@@ -161,6 +161,7 @@
       filled === TOTAL_SLOTS ? "✓ Đã hoàn thành tất cả lựa chọn!" : `${filled} / ${TOTAL_SLOTS} lựa chọn đã hoàn thành`;
     document.getElementById("progress-fill").style.width = `${pct}%`;
     document.getElementById("progress-pct").textContent = `${pct}%`;
+    document.getElementById("share-btn").disabled = filled !== TOTAL_SLOTS;
   }
 
   // ---------- Sortable wiring ----------
